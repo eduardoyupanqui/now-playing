@@ -1,0 +1,14 @@
+@NowPlaying_HostAddress = http://localhost:5272
+
+GET {{NowPlaying_HostAddress}}/now-playing
+Accept: application/json
+
+###
+GET {{NowPlaying_HostAddress}}/top-tracks
+Accept: application/json
+
+###
+GET {{NowPlaying_HostAddress}}/health
+Accept: application/json
+
+###
