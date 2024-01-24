@@ -1,6 +1,12 @@
+using NowPlaying.Clients;
+
 var builder = WebApplication.CreateSlimBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<SpotifyAuthHandler>();
+builder.Services
+  .AddHttpClient<SpotifyClient>(builder => builder.BaseAddress = new Uri("https://api.spotify.com/v1/"))
+  .AddHttpMessageHandler<SpotifyAuthHandler>();
 
 var app = builder.Build();
 
