@@ -20,6 +20,14 @@ public class CurrentlyPlayingResponse
 
   [JsonPropertyName("external_urls")]
   public Dictionary<string, string> ExternalUrls { get; set; } = new Dictionary<string, string>();
+
+  public void Deconstruct(out Item Item, out bool IsPlaying, out int ProgressMs, out Dictionary<string, string>  ExternalUrls)
+  {
+    Item = this.Item;
+    IsPlaying = this.IsPlaying;
+    ProgressMs = this.ProgressMs;
+    ExternalUrls = this.ExternalUrls;
+  }
 }
 public class Item
 {
@@ -30,11 +38,22 @@ public class Item
 
   public Album Album { get; set; }
   public List<Artist> Artists { get; set; }
+
+  public void Deconstruct(out int DurationMs, out string Name)
+  {
+    DurationMs = this.DurationMs;
+    Name = this.Name;
+  }
 }
 public class Album
 {
   [JsonPropertyName("images")]
   public List<Image> Images { get; set; }
+
+  public void Deconstruct(out List<Image> Images)
+  {
+    Images = this.Images;
+  }
 }
 public class Image
 {

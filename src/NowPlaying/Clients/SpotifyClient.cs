@@ -20,4 +20,12 @@ public class SpotifyClient
     response.EnsureSuccessStatusCode();
     return await response.Content.ReadFromJsonAsync<CurrentlyPlayingResponse>();
   }
+
+  public async Task<byte[]> GetAlbumCover(string cover)
+  {
+    var response = await _httpClient.GetAsync(cover);
+    response.EnsureSuccessStatusCode();
+    return await response.Content.ReadAsByteArrayAsync();
+  }
 }
+
