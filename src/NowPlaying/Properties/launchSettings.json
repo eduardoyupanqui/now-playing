@@ -16,7 +16,10 @@
       "launchUrl": "health",
       "applicationUrl": "http://localhost:5272",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SPOTIFY_CLIENT_ID": "",
+        "SPOTIFY_CLIENT_SECRET": "",
+        "SPOTIFY_REFRESH_TOKEN": ""
       }
     },
     "IIS Express": {

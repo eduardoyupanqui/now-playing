@@ -10,10 +10,10 @@ public class SpotifyToken
 public class CurrentlyPlayingResponse
 {
   [JsonPropertyName("is_playing")]
-  public bool IsPlaying { get; set; }
+  public bool IsPlaying { get; set; } = false;
 
   [JsonPropertyName("progress_ms")]
-  public int ProgressMs { get; set; }
+  public int ProgressMs { get; set; } = 0;
 
   [JsonPropertyName("item")]
   public Item Item { get; set; } = new Item();
